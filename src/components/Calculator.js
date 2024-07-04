@@ -24,7 +24,6 @@ const Calculator = () => {
 
   return (
     <div className="flex flex-col items-center animate-fade-in">
-      <img src="logo.png" alt="Logo" className="w-24 h-24 mb-8 mt-8" />
       <div className="w-full max-w-lg p-8 bg-white shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">DIY E-Liquid Kalkulačka</h1>
         {result && (
