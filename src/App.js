@@ -4,16 +4,22 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
     <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/faq" element={<FAQ />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <div className="flex flex-col min-h-screen">
+        <Navbar />
+        <div className="flex-grow">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/faq" element={<FAQ />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
+      </div>
     </Router>
   );
 }

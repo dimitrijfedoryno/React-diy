@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   return (
-    <nav className="bg-gray-800 p-4">
+    <nav className="bg-gray-800 p-4 animate-slide-in">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-white font-bold text-xl">Dimitrije DIY Kalkulačka</div>
         <div className="space-x-4">
