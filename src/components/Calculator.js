@@ -8,9 +8,27 @@ const Calculator = () => {
   const [desiredVgPgRatio, setDesiredVgPgRatio] = useState('');
   const [totalEliquid, setTotalEliquid] = useState('');
   const [flavorPercentage, setFlavorPercentage] = useState('');
+  const [result, setResult] = useState(null);
 
   const handleCalculate = () => {
-    // Implement calculation logic here
+    const vgPgRatio = desiredVgPgRatio.split('/');
+    const desiredVg = parseFloat(vgPgRatio[0]);
+    const desiredPg = parseFloat(vgPgRatio[1]);
+
+    const totalMl = parseFloat(totalEliquid);
+    const flavorMl = (parseFloat(flavorPercentage) / 100) * totalMl;
+    const baseMl = totalMl - flavorMl;
+
+    const nicotineBoosterMl = (parseFloat(desiredNicotine) * baseMl) / parseFloat(nicotineBooster);
+
+    const result = {
+      nicotineBoosterMl: nicotineBoosterMl.toFixed(2),
+      vgMl: ((desiredVg / 100) * baseMl).toFixed(2),
+      pgMl: ((desiredPg / 100) * baseMl).toFixed(2),
+      flavorMl: flavorMl.toFixed(2),
+    };
+
+    setResult(result);
   };
 
   return (
@@ -89,6 +107,15 @@ const Calculator = () => {
         >
           Vypočítat
         </button>
+        {result && (
+          <div className="mt-6">
+            <h2 className="text-2xl font-bold mb-4">Výsledek</h2>
+            <p>Požadované množství nikotinového boosteru: {result.nicotineBoosterMl} ml</p>
+            <p>Požadované množství VG: {result.vgMl} ml</p>
+            <p>Požadované množství PG: {result.pgMl} ml</p>
+            <p>Požadované množství příchuti: {result.flavorMl} ml</p>
+          </div>
+        )}
       </div>
     </div>
   );
