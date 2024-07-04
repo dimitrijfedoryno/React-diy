@@ -29,8 +29,9 @@ const Calculator = () => {
         {result && (
           <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
             <p className="font-bold">Výsledek</p>
-            <p>Požadované množství nikotinového boosteru: {result.nicotineBoosterMl} ml</p>
-            <p>Požadované množství příchuti: {result.flavorMl} ml</p>
+            <hr />
+            <p><b>Množství nikotinového boosteru:</b> {result.nicotineBoosterMl} ml</p>
+            <p><b>marknožství příchuti:</b> {result.flavorMl} ml</p>
           </div>
         )}
         <div className="space-y-4">
