@@ -11,6 +11,7 @@ const Navbar = () => {
   return (
     <nav className="bg-gray-800 p-4">
       <div className="container mx-auto flex justify-between items-center">
+      <Link to="/" className="flex items-center space-x-2">
         <div className="flex items-center space-x-2">
           <img
             className="h-8 w-auto"
@@ -19,6 +20,7 @@ const Navbar = () => {
           />
           <div className="text-white font-bold text-xl">DIY Kalkulačka</div>
         </div>
+      </Link>
         <div className="md:hidden">
           <button
             className="text-white focus:outline-none"
@@ -46,6 +48,13 @@ const Navbar = () => {
             className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
           >
             <span className="relative z-10">Home</span>
+            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+          </Link>
+          <Link
+            to="/kalkulacka"
+            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
+          >
+            <span className="relative z-10">Kalkulačka</span>
             <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
           </Link>
           <Link

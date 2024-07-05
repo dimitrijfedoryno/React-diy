@@ -27,12 +27,16 @@ const Calculator = () => {
       <div className="w-full max-w-lg p-8 bg-white shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">DIY E-Liquid Kalkulačka</h1>
         {result && (
+          <>
+          
           <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
-            <p className="font-bold">Výsledek</p>
+          <h1 className="text-2xl font-bold mb-6 text-center">Výsledek</h1>
             <hr />
+            <p><b>Množství příchuti:</b> {result.flavorMl} ml</p>
             <p><b>Množství nikotinového boosteru:</b> {result.nicotineBoosterMl} ml</p>
-            <p><b>marknožství příchuti:</b> {result.flavorMl} ml</p>
+            <hr />
           </div>
+          </>
         )}
         <div className="space-y-4">
           <div>
