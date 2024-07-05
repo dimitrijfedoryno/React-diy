@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const Calculator = () => {
+const LiquidCalculator = () => {
   const [nicotineBooster, setNicotineBooster] = useState('20'); // Předvyplněná hodnota 20 mg/ml
   const [desiredNicotine, setDesiredNicotine] = useState('');
   const [totalEliquid, setTotalEliquid] = useState('');
@@ -23,7 +23,7 @@ const Calculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center animate-fade-in">
+    <div className="flex flex-col items-center">
       <div className="w-full max-w-lg p-8 bg-white shadow-md rounded-lg">
         <h1 className="text-3xl font-bold mb-6 text-center">DIY E-Liquid Kalkulačka</h1>
         {result && (
@@ -87,4 +87,4 @@ const Calculator = () => {
   );
 };
 
-export default Calculator;
+export default LiquidCalculator;

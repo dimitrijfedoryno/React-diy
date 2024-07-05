@@ -1,10 +1,9 @@
-// src/App.js
-
 import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
-import Kalkulacka from './pages/Kalkulacka';
+import LiquidCalculator from './pages/Liquid';
+import Spiralky from './pages/Spiralky';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
 
@@ -16,7 +15,8 @@ function App() {
         <div className="flex-grow">
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/kalkulacka" element={<Kalkulacka />} />
+            <Route path="/liquid" element={<LiquidCalculator />} />
+            <Route path="/spiralky" element={<Spiralky />} />
             <Route path="/faq" element={<FAQ />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>
