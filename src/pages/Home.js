@@ -14,8 +14,8 @@ const Home = () => {
             src="alchemy.svg"
           />
           <div className="text-center lg:w-2/3 w-full">
-            <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
-              Život vapera jednoduše
+            <h1 className="title-font sm:text-6xl text-2xl mb-4 font-medium bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
+              DIY JEDNODUŠEJI
             </h1>
             <p className="mb-8 leading-relaxed">
               Aplikace je pro zaměřená na jednoduchost a intuitivní ovládání

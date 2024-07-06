@@ -8,4 +8,4 @@ const Background = () => {
     );
   };
 
-  export default Backg round;
+  export default Background;

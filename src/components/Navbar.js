@@ -1,6 +1,14 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+const navbarLinks = [
+  { to: "/", label: "Home" },
+  { to: "/liquid", label: "Liquid" },
+  { to: "/spiralky", label: "Spirálky" },
+  { to: "/faq", label: "FAQ" },
+  { to: "/contact", label: "Kontakt" },
+];
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -43,41 +51,16 @@ const Navbar = () => {
           </button>
         </div>
         <div className="hidden md:flex space-x-4">
-          <Link
-            to="/"
-            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Home</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/liquid"
-            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Liquid</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/spiralky"
-            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Spirálky</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/faq"
-            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">FAQ</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/contact"
-            className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Kontakt</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
+          {navbarLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="text-white px-3 py-2 rounded-md text-sm font-medium relative overflow-hidden group"
+            >
+              <span className="relative z-10">{link.label}</span>
+              <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </Link>
+          ))}
         </div>
       </div>
 
@@ -88,44 +71,20 @@ const Navbar = () => {
         } transition-all duration-300 ease-in-out`}
       >
         <div className="space-y-1 px-2 pb-3 pt-2 text-center">
-          <Link
-            to="/"
-            className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Home</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/liquid"
-            className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Liquid</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/spiralky"
-            className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Spirálky</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/faq"
-            className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">FAQ</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
-          <Link
-            to="/contact"
-            className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
-          >
-            <span className="relative z-10">Kontakt</span>
-            <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-          </Link>
+          {navbarLinks.map((link) => (
+            <Link
+              key={link.to}
+              to={link.to}
+              className="block text-white px-3 py-2 rounded-md text-base font-medium relative overflow-hidden group"
+            >
+              <span className="relative z-10">{link.label}</span>
+              <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            </Link>
+          ))}
         </div>
       </div>
     </nav>
   );
 };
+
 export default Navbar;
