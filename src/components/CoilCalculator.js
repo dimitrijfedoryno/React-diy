@@ -48,7 +48,7 @@ const CoilCalculator = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen p-6">
       <div className="bg-white p-6 rounded-lg shadow-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-6 text-center">Coil Wrapping Kalkulačka</h2>
+        <h2 className="text-2xl font-bold mb-6 text-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">Coil Wrapping Kalkulačka</h2>
         <div className="mb-4">
           <label className="block text-gray-700">Materiál cívky</label>
           <select

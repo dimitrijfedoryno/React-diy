@@ -1,16 +1,38 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
+
+const titleLabel =(
+  "Kalkulačka"
+);
 
 const navbarLinks = [
-  { to: "/", label: "Home" },
-  { to: "/liquid", label: "Liquid" },
-  { to: "/spiralky", label: "Spirálky" },
-  { to: "/faq", label: "FAQ" },
-  { to: "/contact", label: "Kontakt" },
+  { to: "/", label: "Home", title: "Home" +" - "+ titleLabel },
+  { to: "/liquid", label: "Liquid", title: "Liquid" },
+  { to: "/spiralky", label: "Spirálky", title: "Spirálky" },
+  { to: "/faq", label: "FAQ", title: "FAQ" },
+  { to: "/contact", label: "Kontakt", title: "Kontakt" },
 ];
+
+const navTitle = (
+  <div className="text-white font-bold text-xl">DIY Kalkulačka</div>
+);
+
+const logo = (
+  <img className="h-8 w-auto" src="logo.png" alt="Dimitrij Fedoryno" />
+);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const currentRoute = navbarLinks.find(link => link.to === location.pathname);
+    if (currentRoute) {
+      document.title = currentRoute.title;
+    } else {
+      document.title = "VAPE DIY";
+    }
+  }, [location]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -21,12 +43,8 @@ const Navbar = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center space-x-2">
           <div className="flex items-center space-x-2">
-            <img
-              className="h-8 w-auto"
-              src="logo.png"
-              alt="Dimitrij Fedoryno"
-            />
-            <div className="text-white font-bold text-xl">DIY Kalkulačka</div>
+            {logo}
+            {navTitle}
           </div>
         </Link>
         <div className="md:hidden">

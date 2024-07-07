@@ -25,7 +25,7 @@ const LiquidCalculator = () => {
   return (
     <div className="flex flex-col items-center">
       <div className="w-full max-w-lg p-8 bg-white shadow-md rounded-lg">
-        <h1 className="text-3xl font-bold mb-6 text-center">DIY E-Liquid Kalkulačka</h1>
+        <h1 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">DIY E-Liquid Kalkulačka</h1>
         {result && (
           <>
           

@@ -18,8 +18,7 @@ const Home = () => {
               DIY JEDNODUŠEJI
             </h1>
             <p className="mb-8 leading-relaxed">
-              Aplikace je pro zaměřená na jednoduchost a intuitivní ovládání
-              které každý vaper při míchání liquidů nebo motání spirálek.
+              Aplikace je pro zaměřená na jednoduchost a intuitivní ovládání při míchání e-liquidu a motání spirálek.
             </p>
             <div className="flex justify-center">
               <div className="grid grid-cols-2 grid-rows-1 gap-4">
