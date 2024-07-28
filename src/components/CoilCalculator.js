@@ -82,7 +82,7 @@ const CoilCalculator = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">Velikost trnu</label>
+          <label className="block text-gray-700">Velikost trnu (20,25,30, etc.)</label>
           <input
             type="number"
             value={coilDiameter}
