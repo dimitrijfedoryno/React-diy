@@ -5,7 +5,6 @@ const CoilCalculator = () => {
   const [awg, setAwg] = useState('');
   const [coilDiameter, setCoilDiameter] = useState('');
   const [numberOfWraps, setNumberOfWraps] = useState('');
-  const [materialResistancePerFoot, setMaterialResistancePerFoot] = useState('');
   const [result, setResult] = useState(null);
 
   // AWG to mm conversion table
@@ -39,7 +38,7 @@ const CoilCalculator = () => {
       setResult('Invalid AWG value');
       return;
     }
-    const wireLength = (Math.PI * (parseFloat(coilDiameter) + parseFloat(wireDiameter)) * parseFloat(numberOfWraps)) / 1000; // Length in meters
+    const wireLength = (Math.PI * (parseFloat(coilDiameter) + wireDiameter) * parseFloat(numberOfWraps)) / 1000; // Length in meters
     const resistance = wireLength * resistancePerMeter;
 
     setResult(resistance.toFixed(2));
@@ -57,20 +56,11 @@ const CoilCalculator = () => {
             className="w-full p-2 border border-gray-300 rounded mt-1 focus:outline-none focus:border-blue-500"
           >
             <option value="Kanthal A1">Kanthal A1</option>
-            <option value="Nichrome Ni80">Nichrome N80</option>
+            <option value="Nichrome Ni80">Nichrome Ni80</option>
             <option value="Stainless Steel SS316">Stainless Steel SS316</option>
             <option value="Nickel Ni200">Nickel Ni200</option>
             <option value="Titanium Ti1">Titanium Ti1</option>
           </select>
-        </div>
-        <div className="mb-4">
-          <label className="block text-gray-700">Odpor materiálu na 1 ft (Ω)</label>
-          <input
-            type="number"
-            value={materialResistancePerFoot}
-            onChange={(e) => setMaterialResistancePerFoot(e.target.value)}
-            className="w-full p-2 border border-gray-300 rounded mt-1"
-          />
         </div>
         <div className="mb-4">
           <label className="block text-gray-700">Průměr drátu (AWG)</label>
@@ -82,7 +72,7 @@ const CoilCalculator = () => {
           />
         </div>
         <div className="mb-4">
-          <label className="block text-gray-700">Velikost trnu (20,25,30, etc.)</label>
+          <label className="block text-gray-700">Velikost trnu (mm)</label>
           <input
             type="number"
             value={coilDiameter}

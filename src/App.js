@@ -6,6 +6,7 @@ import LiquidCalculator from './pages/Liquid';
 import Spiralky from './pages/Spiralky';
 import FAQ from './pages/FAQ';
 import Contact from './pages/Contact';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -21,9 +22,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
           </Routes>
         </div>
-        <footer className="bg-gray-800 text-white py-4 text-center">
-          © 2024 DIY Kalkulačka. All rights reserved.
-        </footer>
+        <Footer />
       </div>
     </Router>
   );

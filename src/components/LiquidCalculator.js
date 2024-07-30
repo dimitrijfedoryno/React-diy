@@ -10,13 +10,15 @@ const LiquidCalculator = () => {
   const handleCalculate = () => {
     const totalMl = parseFloat(totalEliquid);
     const flavorMl = (parseFloat(flavorPercentage) / 100) * totalMl;
-    const baseMl = totalMl - flavorMl;
 
-    const nicotineBoosterMl = (parseFloat(desiredNicotine) * baseMl) / parseFloat(nicotineBooster);
+    const nicotineBoosterMl = (parseFloat(desiredNicotine) * totalMl) / parseFloat(nicotineBooster);
+    const nicotineFreeBaseMl = totalMl - flavorMl - nicotineBoosterMl;
 
     const result = {
       nicotineBoosterMl: nicotineBoosterMl.toFixed(2),
       flavorMl: flavorMl.toFixed(2),
+      nicotineFreeBaseMl: nicotineFreeBaseMl.toFixed(2),
+      totalMl: totalMl.toFixed(2),
     };
 
     setResult(result);
@@ -28,14 +30,16 @@ const LiquidCalculator = () => {
         <h1 className="text-3xl font-bold mb-6 text-center bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">DIY E-Liquid Kalkulačka</h1>
         {result && (
           <>
-          
-          <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
-          <h1 className="text-2xl font-bold mb-6 text-center">Výsledek</h1>
-            <hr />
-            <p><b>Množství příchuti:</b> {result.flavorMl} ml</p>
-            <p><b>Množství nikotinového boosteru:</b> {result.nicotineBoosterMl} ml</p>
-            <hr />
-          </div>
+            <div className="bg-green-100 border-l-4 border-green-500 text-green-700 p-4 mb-6" role="alert">
+              <h1 className="text-2xl font-bold mb-6 text-center">Výsledek</h1>
+              <hr />
+              <p><b>Množství příchuti:</b> {result.flavorMl} ml</p>
+              <p><b>Množství nikotinového boosteru:</b> {result.nicotineBoosterMl} ml</p>
+              <p><b>Množství beznikotinové báze:</b> {result.nicotineFreeBaseMl} ml</p>
+              <hr />
+              <p><b>Celkové množství liquidu:</b> {result.totalMl} ml</p>
+              <hr />
+            </div>
           </>
         )}
         <div className="space-y-4">
