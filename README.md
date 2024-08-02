@@ -1,4 +1,4 @@
-Sure! Here is a detailed `README.md` for the repository.
+Sure! Here is the updated `README.md` with the demo link included:
 
 ---
 
@@ -33,7 +33,7 @@ Welcome to the **React DIY** project! This repository contains a simple yet comp
 
 ## Demo
 
-Check out the live demo of the application [here](#).
+Check out the live demo of the application [here](https://kalkulacka.fedoryno.cz/).
 
 ## Installation
 
@@ -149,4 +149,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Thank you for using **React DIY**! If you have any questions or suggestions, feel free to open an issue or submit a pull request.
 
 Happy coding!
-
