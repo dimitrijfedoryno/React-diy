@@ -13,7 +13,7 @@ const Testimonial = () => {
         <img
           className="w-6 h-6 rounded-full"
           src="images/testimonial.jpg"
-          alt="profile picture"
+          alt="Dimitrij Fedoryno"
         />
         <div className="flex items-center divide-x-2 rtl:divide-x-reverse divide-gray-500 dark:divide-gray-700">
           <cite className="pe-3 font-medium text-gray-900 dark:text-red-500">

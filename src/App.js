@@ -6,7 +6,6 @@ import Home from "./pages/Home";
 import LiquidCalculator from "./pages/Liquid";
 import Spiralky from "./pages/Spiralky";
 import FAQ from "./pages/FAQ";
-import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import { trackPageView } from "./analytics";
 

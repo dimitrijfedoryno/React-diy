@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FaDiscord, FaInstagram } from "react-icons/fa";
 
-const titleLabel = "Kalkulačka";
 
 const navbarLinks = [
-  { to: "/", label: "Home", title: "Home" + " - " + titleLabel },
+  { to: "/", label: "Home", title: "Home" },
   { to: "/liquid", label: "Liquid", title: "Liquid" },
   { to: "/spiralky", label: "Spirálky", title: "Spirálky" },
   { to: "/faq", label: "FAQ", title: "FAQ" },
@@ -78,10 +77,10 @@ const Navbar = () => {
             </Link>
           ))}
           <div className="flex space-x-4">
-            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <a href="https://discord.gg/nryfX3gSte" target="_blank" rel="noopener noreferrer" className="text-white">
               <FaDiscord size={24} />
             </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
+            <a href="https://instagram.com/thefedoryno" target="_blank" rel="noopener noreferrer" className="text-white">
               <FaInstagram size={24} />
             </a>
           </div>
