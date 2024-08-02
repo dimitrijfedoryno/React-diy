@@ -15,11 +15,14 @@ const Home = () => {
           />
           <div className="text-center lg:w-2/3 w-full">
             <h1 className="title-font sm:text-6xl text-2xl mb-4 font-medium bg-gradient-to-r from-pink-500 to-yellow-500 bg-clip-text text-transparent">
-              DIY JEDNODUŠEJI
+              VAPE DIY Kalkulačka
             </h1>
             <p className="mb-8 leading-relaxed">
               Aplikace je pro zaměřená na jednoduchost a intuitivní ovládání při míchání e-liquidu a motání spirálek.
             </p>
+
+
+
             <div className="flex justify-center">
               <div className="grid grid-cols-2 grid-rows-1 gap-4">
                 <div>
@@ -39,6 +42,7 @@ const Home = () => {
                   </Link>
                 </div>
               </div>
+
 
               <div class="relative inline-flex group">
                 <div class="absolute transitiona-all duration-1000 opacity-70 -inset-px bg-gradient-to-r from-[#44BCFF] via-[#FF44EC] to-[#FF675E] rounded-xl blur-lg filter group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200"></div>

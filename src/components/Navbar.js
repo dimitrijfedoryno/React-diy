@@ -1,20 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { FaDiscord, FaInstagram } from "react-icons/fa";
 
-const titleLabel =(
-  "Kalkulačka"
-);
+const titleLabel = "Kalkulačka";
 
 const navbarLinks = [
-  { to: "/", label: "Home", title: "Home" +" - "+ titleLabel },
+  { to: "/", label: "Home", title: "Home" + " - " + titleLabel },
   { to: "/liquid", label: "Liquid", title: "Liquid" },
   { to: "/spiralky", label: "Spirálky", title: "Spirálky" },
   { to: "/faq", label: "FAQ", title: "FAQ" },
-  { to: "/contact", label: "Kontakt", title: "Kontakt" },
 ];
 
 const navTitle = (
-  <div className="text-white font-bold text-xl">DIY Kalkulačka</div>
+  <div className="text-white font-bold text-xl">VAPE Kalkulačka</div>
 );
 
 const logo = (
@@ -26,7 +24,7 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-    const currentRoute = navbarLinks.find(link => link.to === location.pathname);
+    const currentRoute = navbarLinks.find((link) => link.to === location.pathname);
     if (currentRoute) {
       document.title = currentRoute.title;
     } else {
@@ -68,7 +66,7 @@ const Navbar = () => {
             </svg>
           </button>
         </div>
-        <div className="hidden md:flex space-x-4">
+        <div className="hidden md:flex space-x-4 items-center">
           {navbarLinks.map((link) => (
             <Link
               key={link.to}
@@ -79,14 +77,20 @@ const Navbar = () => {
               <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </Link>
           ))}
+          <div className="flex space-x-4">
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaDiscord size={24} />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaInstagram size={24} />
+            </a>
+          </div>
         </div>
       </div>
 
       {/* Mobile menu, show/hide based on menu state. */}
       <div
-        className={`md:hidden ${
-          isOpen ? "block" : "hidden"
-        } transition-all duration-300 ease-in-out`}
+        className={`md:hidden ${isOpen ? "block" : "hidden"} transition-all duration-300 ease-in-out`}
       >
         <div className="space-y-1 px-2 pb-3 pt-2 text-center">
           {navbarLinks.map((link) => (
@@ -99,6 +103,14 @@ const Navbar = () => {
               <span className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-100 transition-opacity"></span>
             </Link>
           ))}
+          <div className="flex justify-center space-x-4 mt-4">
+            <a href="https://discord.gg/nryfX3gSte" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaDiscord size={24} />
+            </a>
+            <a href="https://instagram.com/thefedoryno" target="_blank" rel="noopener noreferrer" className="text-white">
+              <FaInstagram size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </nav>
